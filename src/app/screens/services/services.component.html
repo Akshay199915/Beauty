@@ -1,0 +1,170 @@
+<app-header></app-header>
+<app-loader [loader]=loader></app-loader>
+<div class="col-md-12 m-0 p-0 serv_back">
+    <div class="row m-0 headingdiv p-0">
+        <div class="col-md-12 mt-5">
+            <h1 class="bannerTitle text-light">Book Your Appointment</h1>
+            <p class="bannerSubTitle text-light">Now it's easy to Book a Beautician at Home</p>
+            <img src="../../../assets/imgs/serv_offer.png" class="offer_img" />
+            <p class="sitemap_text"><label><i class="fa fa-globe"></i> Home / Book Appointment</label></p>
+        </div>
+    </div>
+    <div class="row m-0 justify-content-center">
+        <div class="col-md-10 mt-5">
+            <h2 class="text-center" style="color:#862d59;">Choose a Service</h2>
+            <p class="text-center font-weight-bold">Here are some of the popular services we offer.</p>
+            <nav class="mt-5 nav nav-pills flex-column flex-sm-row">
+                <a *ngFor="let category of categories" 
+                    class="flex-sm-fill {{category.cat_selection_type}} text-sm-center nav-link" 
+                    href="javascript::void()"
+                    (click) = selectCat(category.cat_id)
+                    >{{category.cat_name}}
+                </a>
+            </nav><hr>
+        </div>
+    </div>
+    <div class="row m-0 pb-3 justify-content-center">
+        <div class="col-md-6">
+            <div class="row m-0 justify-content-between">
+                <div *ngFor="let subCat of subCategories" class="col-md-6 pl-0 mt-3">
+                    <div class="bg-white serviceDiv">
+                        <div class="thumb-wrapper">
+                            <div class="img-box serviceDivBanner" style="background-image: url(../../../assets/imgs/{{subCat.sub_cat_image}})">
+                                <p class="serviceDivBannerHeading">{{subCat.sub_cat_title}}</p>
+                            </div>
+                        </div>
+                        <div *ngIf="subCat.services; else noService">
+                            <div *ngFor="let service of subCat.services" class="row mx-2 pt-3 pb-2 serviceRow">
+                                <div class="col-md-6 p-0">
+                                    <label><input type="checkbox" /> {{service.serv_name}}</label>
+                                </div>
+                                <div class="col-md-6 p-0">
+                                    <i class="fa fa-arrow-right"></i>&nbsp;
+                                    <i class="fa fa-rupee"></i> {{service.serv_price}} ({{service.serv_time}})
+                                </div>
+                            </div>
+                        </div>
+                        <ng-template #noService>
+                            <div class="col mx-2 pt-3 pb-2">
+                                <p class="font-weight-bold text-center mt-3">No Any Service Found Yet</p>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 p-0 mt-3 pb-3 cartBox">
+            <p class="details_heading">Fill in your Details</p>
+            <div class="col-md-12 form-group">
+                <input type="text" class="form-control" placeholder="Mobile Number" />
+            </div>
+            <div class="col-md-12 input-group">
+                <input type="text" class="form-control" placeholder="Mention Address" />
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fa fa-location-arrow"></i></span>
+                </div>
+            </div>
+            <div class="col-md-12 mt-3 form-group">
+                <select class="form-control" >
+                    <option>Select Time Slot</option>
+                </select>
+            </div>
+            <div class="col-md-12 mt-3 form-group">
+                <textarea class="form-control" placeholder="Special Instructions" ></textarea>
+            </div>
+            <hr />
+            <h5 class="text-center">Cart Information</h5>
+            <div style="overflow-y:scroll;height:250px">
+                <div class="row m-0 mt-3">
+                    <div class="col-md-6">
+                        <label class="font-weight-bold">Service Name</label>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <label class="font-weight-bold">Time</label>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <label class="font-weight-bold">Price</label>
+                    </div>
+                </div><hr>
+                <div class="row m-0">
+                    <div class="col-md-6">
+                        <p>Anti Hairfall Keratin Treatment With Aroma Massage</p>
+                    </div>
+                    <div class="col-md-3 text-center p-0">
+                        <p>2400</p>
+                    </div>
+                    <div class="col-md-3 text-center p-0">
+                        <p><i class="fa fa-rupee"></i> 83899.00</p>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col-md-6">
+                        <p>Anti Hairfall Keratin Treatment With Aroma Massage</p>
+                    </div>
+                    <div class="col-md-3 text-center p-0">
+                        <p>2400</p>
+                    </div>
+                    <div class="col-md-3 text-center p-0">
+                        <p><i class="fa fa-rupee"></i> 83899.00</p>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col-md-6">
+                        <p>Anti Hairfall Keratin Treatment With Aroma Massage</p>
+                    </div>
+                    <div class="col-md-3 text-center p-0">
+                        <p>2400</p>
+                    </div>
+                    <div class="col-md-3 text-center p-0">
+                        <p><i class="fa fa-rupee"></i> 83899.00</p>
+                    </div>
+                </div>
+            </div><hr />
+            <div class="row m-0">
+                <div class="col-md-6 text-center">
+                    <label class="font-weight-bold">Total</label>
+                </div>
+                <div class="col-md-3 text-center">
+                    <label class="font-weight-bold">03:40 Hr</label>
+                </div>
+                <div class="col-md-3 text-center">
+                    <label class="font-weight-bold"><i class="fa fa-rupee"></i> 130000.00</label>
+                </div>
+            </div>
+            <div class="row m-0">
+                <div class="col-md-6 text-center">
+                    <label class="">Gst.</label>
+                </div>
+                <div class="col-md-3 text-center">
+                    <label class="">18%</label>
+                </div>
+                <div class="col-md-3 text-center">
+                    <label class=""><i class="fa fa-rupee"></i> 23400.00</label>
+                </div>
+            </div><hr>
+            <div class="row m-0">
+                <div class="col-md-9 text-center">
+                    <label class="font-weight-bold">Grand Total</label>
+                </div>
+                <div class="col-md-3 text-center">
+                    <label class="font-weight-bold"><i class="fa fa-rupee"></i> 153400.00</label>
+                </div>
+            </div><hr>
+            <div class="col-md-12 mt-3 form-group">
+                <label class="pull-left"><input type="checkbox" /> Terms & Conditions</label>
+                <div class="btn-group pull-right" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-outline-success btn-sm">Pay Now</button>
+                    <button type="button" class="btn btn-outline-info btn-sm">Pay Later</button>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-12 mt-3">
+                <button class="btn btn-danger btn-block">Book Now</button>
+            </div>
+            <!-- <div>
+                <p class="text-center mt-5 font-weight-bold">Cart is Empty</p>
+            </div> -->
+        </div>
+    </div>
+</div>          
+<app-footer></app-footer>

@@ -1,0 +1,37 @@
+.footer{
+    background-color:#222;
+}
+.social_icon{
+    height:40px;
+    width:40px;
+    padding-top: 9px;
+    border-radius:50%;
+    line-height: inherit;
+    margin-left:15px;
+}
+.item{
+    color:#fff;
+    display: inline-block;
+    padding-right: 30px;
+}
+.design3{
+    color: #993366;
+}
+.design4
+{
+    color:white;
+    
+}
+.design5
+{
+    border-color:#993366;
+    color:white;
+    border-radius:20px;
+}
+.design6
+{
+    border-color:#993366;
+    color:white;
+    border-radius:50px;
+    
+}

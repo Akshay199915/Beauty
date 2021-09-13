@@ -1,0 +1,47 @@
+.info1{
+  z-index: 1000 ;
+  box-shadow: 0 7px 15px rgba(0,0,0,0.2);
+}
+.attribute
+{
+display: inline-block; 
+vertical-align: top; 
+width: 25%;
+}
+.value{
+display: block;
+font-weight: 700;
+color: #363636; 
+font-size: 38px;
+}
+.title{
+  display: block;
+  font-family: 'Crimson Text', serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  color: #993366;
+}
+.agent-box-image{
+width: 160px;
+height: 160px; 
+float:left; 
+border-radius: 50%;
+margin: 10px;
+background-size: cover;
+position: relative;
+}
+.cmnt1{
+  opacity: initial; 
+  font-style: italic;
+  color: #993366;
+}
+.img1{
+  /* background-image: url("src\assets\imgs\pic4.jpg"); */
+}
+.img3{
+  /* background-image: url("src\assets\imgs\pic2.jpg"); */
+}
+.img4{
+  /* background-image: url("src\assets\imgs\pic3.jpg"); */
+}

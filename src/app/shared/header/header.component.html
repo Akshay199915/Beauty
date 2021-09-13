@@ -1,0 +1,153 @@
+<div class="container-fluid heading">
+    <div class="row">
+        <div *ngIf="barMessage !=''" class="col-md-12 bg-danger text-light text-center topBar">{{barMessage}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 p-0 text-center">
+            <i class="social_icons_header fa fa-facebook text-primary"></i>
+            <i class="social_icons_header fa fa-google-plus text-danger"></i>
+            <i class="social_icons_header fa fa-twitter text-info"></i>
+            <i class="social_icons_header fa fa-youtube-play text-danger"></i>
+        </div>
+        <div class="col-md-8 p-0 text-center">
+            <nav>
+                <ul class="menu">
+                    <li class="current-menu-item text-info">
+                        <a class="item" href="home"><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li class="current-menu-item text-info">
+                        <a class="item" href="home#section_about"><i class="fa fa-file"></i> About</a>
+                    </li>
+                    <li class="current-menu-item text-info" style="padding-right:0">
+                        <a class="item" href="home#services"><i class="fa fa-cogs"></i> Services</a>
+                    </li>
+                    <li class="current-menu-item" style="padding-right:0">
+                        <a href="home">
+                            <img class="img-logo" src="../../../assets/imgs/logo.png" />
+                        </a>
+                    </li>
+                    <li class="current-menu-item text-info">
+                        <a *ngIf="isLoggedIn" class="item" href="appointment"><i class="fa fa-calendar"></i> Appointment</a>
+                        <a *ngIf="!isLoggedIn" class="item" (click)="open(login,'lg')" href="javascript::void()"><i class="fa fa-calendar"></i> Appointment</a>
+                    </li>
+                    <li class="current-menu-item text-info">
+                        <a class="item" href="home#testimonials"><i class="fa fa-comment"></i> Testimonials</a>
+                    </li>
+                    <li class="current-menu-item text-info">
+                        <a class="item" href="home#contact"><i class="fa fa-phone"></i> Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div *ngIf="isLoggedIn; else loggedOut" class="col-md-2 p-0">  
+            <ul>
+                <li class="login text-danger">
+                    <a href="javascript::void()">
+                        <img src="../../../assets/imgs/woman-icon.png" class="img-fluid" style="max-height: 40px;"/>
+                        <label (click) = "toggleProfileMenu()" >&nbsp;&nbsp;{{UserObject.u_fname}} {{UserObject.u_lname}}&nbsp;&nbsp;<i class="fa fa-caret-down"></i></label><br>
+                        <div *ngIf="profileMenuStateVisible" class="dropdown-menu" style="display:block">
+                            <a class="dropdown-item" href="javascript::void()"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="dropdown-item" href="javascript::void()"><i class="fa fa-lock"></i> Change Password</a>
+                            <a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Orders</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" (click)="logout()" href="javascript::void()"><i class="fa fa-sign-out"> </i>Logout</a>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <ng-template #loggedOut>
+            <div  class="col-md-2 p-0">  
+                <ul>
+                    <li class="login text-danger">
+                        <a (click)="open(login,'lg')" href="javascript::void()"><i class="fa fa-sign-in"></i> Login</a>
+                    </li>
+                    <li class="login text-danger register">
+                        <a (click)="open(register,'md')" href="javascript::void()"><i class="fa fa-user"></i> Register</a>
+                    </li>
+                </ul>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+<ng-template #login let-c="close" let-d="dismiss">
+    <div class="col-md-12">
+        <div class="row p-0">
+            <div class="col-md-7">
+                <div class="row justify-content-center py-4">
+                    <div class="col-md-12 mb-3 text-center">
+                        <img class="img-fluid" src="../../../assets/imgs/logo.png" />
+                    </div>
+                    <p class="text-danger">{{modalError}}</p>
+                    <div class="col-md-10 form-group">
+                        <label>E-Mail Address</label>
+                        <input type="text" [(ngModel)] = "email" class="form-control" placeholder="abc@example.com" />
+                    </div>
+                    <div class="col-md-10 form-group">
+                        <label>Password</label>
+                        <input type="password" [(ngModel)] = "password" class="form-control" placeholder="******" />
+                    </div>
+                    <div class="col-md-10 mt-3">
+                        <label class="pull-left">
+                            <i class="fa fa-square-o text-success"></i> Remember Me.</label>
+                        <label class="pull-right font-weight-bold">Forgot Password ?</label>
+                    </div>
+                    <div class="col-md-10 mt-3 text-center">
+                        <button [disabled] = "disableButton" (click)="loginUser()" class="btn btn-warning btn-block">{{LoginButtonText}}</button>
+                    </div>
+                    <p class=" mt-4 text-center">You don't have an Account ? <br>
+                        <a (click)="open(register,'md')" href="javascript::void()" class="link" >SignUp Here</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-5 left_to_form" style="background-image: url(../../../assets/imgs/slider1.jpg)">
+                <i (click)="closeModal()" class="link fa fa-times fa-2x pull-right mt-2 text-light"></i>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<ng-template #register let-c="close" let-d="dismiss">
+    <div class="col-md-12">
+        <i (click)="closeModal()" style="position:absolute;right:0" class="link fa fa-times fa-2x text-dark"></i>
+        <div class="row justify-content-center py-3">
+            <div class="col-md-12 text-center">
+                <img class="img-fluid" src="../../../assets/imgs/logo.png" />
+            </div>
+            <div class="col-md-12 text-center">
+                <h3 style="color:#D471AA">Create Your Account</h3>
+                <p class="text-danger">{{regModalError}}</p>
+            </div>
+            <div class="col-md-6 mt-2 form-group">
+                <label>First Name</label>
+                <input type="text" [(ngModel)]="u_fname" class="form-control" placeholder="Kiara" />
+            </div>
+            <div class="col-md-6 mt-2 form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" [(ngModel)]="u_lname" placeholder="Advani" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>E-Mail</label>
+                <input type="text" class="form-control" [(ngModel)]="u_email" placeholder="abc@example.com" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Mobile Number</label>
+                <input type="text" class="form-control" [(ngModel)]="u_mobile" placeholder="98XXXXXX88" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" [(ngModel)]="u_password" placeholder="******" />
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" [(ngModel)]="u_conf_password" placeholder="Re-enter Password" />
+            </div>
+            <div class="col-md-12 mt-2">
+                <button [disabled] = "disableRegButton" class="btn btn-warning btn-block" (click)="registerNow()" >{{regButtonText}}</button>
+            </div>
+        </div>
+        <p class=" mt-2 text-center">Already have an Account ? <br>
+            <a (click)="open(login,'lg')" href="javascript::void()" class="link" >Login Here</a>
+        </p>
+    </div>
+</ng-template>

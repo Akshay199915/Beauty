@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* carousal design start from here */
+.video_banner{
+    position: absolute;
+    z-index: -3;
+    margin-top: 75px;
+}
+.video_black_sheet{
+    background:#000;
+    position: absolute;
+    z-index: -2;
+    height:550px;
+    opacity:0.55;
+    margin-top:75px
+}
+.carousel{
+    margin: 0;
+    margin-top:75px;
+    background: transparent;
+    position: relative;
+}
+.carousel:after {
+	content: "";
+    position: absolute;
+    z-index: -1;
+    height: 60px;
+    bottom: 0px;
+    left: 10px;
+    right: 10px;
+    border-radius: 100px / 20px;
+}
+.carousel .item {
+    text-align: center;
+	overflow: hidden;
+    height: 550px;
+}
+.carousel .item img {
+	max-width: 100%;
+    margin: 0 auto; /* Align slide image horizontally center in Bootstrap v3 */
+}
+.carousel .carousel-control {
+	width: 50px;
+    height: 50px;
+    margin: auto 0;
+	opacity: 0.8;
+}
+.carousel .carousel-control:hover {
+	opacity: 0.9;
+}
+.carousel .carousel-control i {
+    font-size: 41px;
+}
+.carousel-caption h3, .carousel-caption p {
+	color: #fff;
+	display: inline-block;
+	font-family: 'Oswald', sans-serif;
+	text-shadow: none;
+	margin-bottom: 20px;
+}
+.carousel-caption h3 {
+	padding: 12px 24px;
+	font-size: 40px;	
+	text-transform: uppercase;
+}
+.carousel-caption p {
+	padding: 10px 20px;
+	font-size: 20px;
+	font-weight: 300;
+}
+.carousel-action {
+	padding: 10px 0 30px;
+}
+.carousel-action .btn {
+	min-height: 34px;
+	border-radius: 0;
+	margin: 3px;
+	min-width: 150px;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+}
+.carousel-action .btn-primary {
+	border-color: rgb(255, 255, 255);
+	background: none;
+	color: rgb(255, 255, 255);
+}
+.carousel-action .btn-primary:hover {
+	background: #000;
+	color: #fff;
+}
+.carousel-action .btn-success {
+	background: #D471AA;
+	border: none;
+}
+.carousel-action .btn-success:hover {
+	background: #D471AA;
+}
+
+.section_heading{
+    font-size: 42px;
+    font-family: 'Pacifico', sans-serif;
+    margin: 0 0 30px;
+    text-align: center;
+}
+
+/* about section design */
+.about_section{
+    padding: 100px 0 30px;
+    background: #fff;
+}
+
+/* gallery section design */
+.g_img{
+    height:185px;
+    width:100%;
+    cursor:pointer
+}
+/* Contact us section design start from here */
+.contact_section{
+    background: #E9C3B8;
+}
+.contact-form {
+    padding: 40px;
+    margin: 30px auto;
+}	
+.contact-form h1 {
+    font-size: 42px;
+    font-family: 'Pacifico', sans-serif;
+    margin: 0 0 30px;
+    text-align: center;
+}
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+.contact-form .form-control, .contact-form .btn {
+    border-radius: 2px;
+}
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* newsletter section design start from here */
+.section_newsletter{
+    text-align: center;
+    background-color: #efefef;
+}
+.section_newsletter h1{
+    font-size: 42px;
+    font-family: 'Pacifico', sans-serif;
+    margin: 0 0 10px;
+    text-align: center;
+}

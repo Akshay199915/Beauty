@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Expand and Collapse FAQ Accordion</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500|Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function(){
+		// Add minus icon for collapse element which is open by default
+		$(".collapse.show").each(function(){
+			$(this).prev(".card-header").addClass("highlight");
+		});
+		
+		// Highlight open collapsed element 
+		$(".card-header .btn").click(function(){
+			$(".card-header").not($(this).parents()).removeClass("highlight");
+			$(this).parents(".card-header").toggleClass("highlight");
+		});
+	});
+</script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-title">Frequently Asked Questions</h1>
+			<div class="accordion" id="accordionExample">
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h2 class="clearfix mb-0">
+							<a class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="fa fa-chevron-circle-down"></i> Do you guarantee your services?</a>									
+						</h2>
+					</div>
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+						<div class="card-body">YES! Our unconditional guarantee is that you receive the best service ever, or it’s free.</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingTwo">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-chevron-circle-down"></i> What are your hours?</a>
+						</h2>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						<div class="card-body">Monday – Friday: 9 to 7pm Saturday: 8 to 6pm Sunday: Closed</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingThree">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-chevron-circle-down"></i> How do I schedule an appointment</a>                     
+						</h2>
+					</div>
+					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						<div class="card-body">You can schedule your appointment by phone</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingFour">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-chevron-circle-down"></i> Can I book extra services while I am at the spa?</a>                               
+						</h2>
+					</div>
+					<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+						<div class="card-body">Absolutely, please ask! We will always try to accommodate your wishes, 
+                            although we do recommend that you book your treatments in advance.</div>
+					</div>
+                </div>
+                <div class="card">
+					<div class="card-header" id="headingFive">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-chevron-circle-down"></i> Are reservations necessary?</a>                               
+						</h2>
+					</div>
+					<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+						<div class="card-body">We highly recommend making reservations in advance, but feel free to call on short notice, 
+                            as we may have an opening or cancellation. A credit card will be necessary to 
+                            hold your reservation.</div>
+					</div>
+                </div>
+                <div class="card">
+					<div class="card-header" id="headingSix">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-chevron-circle-down"></i> Can I book extra services while I am at the spa?</a>                               
+						</h2>
+					</div>
+					<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+						<div class="card-body">Absolutely, please ask! We will always try to accommodate your wishes, 
+                            although we do recommend that you book your treatments in advance.</div>
+					</div>
+                </div>
+                <div class="card">
+					<div class="card-header" id="headingSeven">
+						<h2 class="mb-0">
+							<a class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseFour"><i class="fa fa-chevron-circle-down"></i> What should I wear for a spa or salon treatment?</a>                               
+						</h2>
+					</div>
+					<div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+						<div class="card-body">No special clothing is required; come as you are! If you are enjoying several services, 
+                            you will be provided with a robe and slippers. Towels for the eucalyptus steam shower are 
+                            available. Your personal comfort is always most important to us!</div>
+					</div>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>                            

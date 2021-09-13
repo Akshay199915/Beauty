@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.serv_back{
+    background:url('../../../assets/imgs/service_back.png');
+    background-size: cover;
+}
+.headingdiv{
+    background-image: url('../../../assets/imgs/servicesBanner.png');
+    margin-top:70px;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0,0,0,1);
+}
+.bannerTitle{
+    font-size: 42px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 70px 0 30px;
+    text-align: center;
+    text-transform:capitalize ;
+}
+.bannerSubTitle{
+    font-size: 30px;
+    font-family: courier;
+    margin: 10px 0 30px;
+    text-align: center;
+}
+.sitemap_text{
+    color:gray;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top:105px;
+    font-weight: bold;
+    font-size:20px;
+}
+.offer_img{
+    position: absolute;
+    right:50px;
+    height:270px;
+    top:190;
+}
+.nav-link{
+    border-radius: 0;
+    color:#D981B4;
+    background-color: white;
+}
+
+.nav-link.active{
+    background-color: #D981B4;
+}
+.cartBox{
+    background-color: #fff;
+    box-shadow: 0,0,5px,#ccc;
+}
+.serviceDiv{
+    box-shadow: 0px 0px 5px #ccc;
+    border-radius: 5px;
+}
+.serviceDivBanner{
+    height:200px;
+    background-size: cover;
+    overflow: hidden;
+}
+.serviceDivBannerHeading{
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 7px 0;
+    text-align: center;
+    margin-top: 162px;
+    box-shadow: 0px -5px 5px rgba(0,0,0,0.5);
+}
+.serviceRow{
+    border-bottom: 1px solid #D981B4;
+    font-size:14px;
+}
+.details_heading{
+    background-color: #D981B4;
+    padding:10px;
+    text-align:center;
+    font-weight: bold;
+    color:white
+}
+
+
+
+.pack1{
+    height:100px;
+    margin-top:80px;
+}
+.pack2{
+    height:100px;
+    margin-top:80px;
+}
+.pack3{
+    height:100px;
+    margin-top:80px;
+}
+.imags{
+    height:350px;
+}
+.img1{
+    height:250px;
+    width:250px;
+    /* background-image: url("src\assets\images\spa.jpg"); */
+    border-radius:5%;
+    box-shadow:2px 2px 2px 2px;
+    transition: 80ms all linear;
+    display:inline-block;
+    cursor: pointer;
+}
+.img1:hover{
+    width:270px;
+    height:270px;
+}
+.img2{
+    height:250px;
+    width:250px;
+    /* background-image: url("src\assets\images\makeup.jpg"); */
+    border-radius:5%;
+    box-shadow:2px 2px 2px 2px;
+    transition: 80ms all linear;
+    display:inline-block;
+    cursor:pointer;
+}
+.img2:hover{
+    width:270px;
+    height:270px;
+}
+.img3{
+    height:250px;
+    width:250px;
+    /* background-image: url("src\assets\images\haircut.jpg"); */
+    border-radius:5%;
+    box-shadow:2px 2px 2px 2px;
+    transition: 80ms all linear;
+    display:inline-block;
+    cursor: pointer;
+}
+.img3:hover{
+    width:270px;
+    height:270px;
+}
+h5{
+    cursor:pointer;
+}
+h5:hover{
+    color:black;
+}
+.facial1{
+    /* background-image: url("src\assets\images\facial1.jpg"); */
+   height:200px;
+    display:block;
+    background-repeat: no-repeat;
+   }
+  
+.facial2{
+    /* background-image: url("src\assets\images\facial2.jpg"); */
+    height:200px;
+    box-sizing:border-box;
+    background-repeat: no-repeat;
+}
+.facial3{
+    /* background-image: url("src\assets\images\facial3.jpg"); */
+    background-repeat: no-repeat;
+    height:150px;
+    box-sizing:border-box;
+}
+   
+ul li{
+    list-style-type: none;
+    font-size:16px;
+    padding:5px;
+    color: #262626;
+    font-weight: 500;
+}
+li {
+    display: list-item;
+   margin-top:10px;
+}
+.orderbtn{
+    font-weight:600;
+    height:50px;
+    width:120px;
+    background:linear-gradient(90deg,#862d59,#ffcc99);
+    border:none;
+    color:white;
+    transition: 1s linear;
+    cursor:pointer;
+}
+.orderbtn:hover{
+    opacity:0.8;
+    color:black;
+}
+.div2{
+    border: 1px solid #f5f5f5;
+}
+.div2:hover{
+    box-shadow:2px 2px 4px 4px;
+}
+.ul{
+    list-style-type:none;
+    font-family: 'Dosis', sans-serif;
+    margin-top:10px;
+    
+}
+.container1{
+    padding-right:0px;
+    padding-left:0px;
+}
+.pdf{
+    height:120px;
+    background-color:white;
+    cursor:pointer;
+}
+.pname:hover{
+    color:#862d59;
+}
+.pname2:hover{
+    color:black;
+}
